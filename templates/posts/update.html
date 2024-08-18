@@ -2,20 +2,15 @@
 
 
 
-{% block title %}New{% endblock title%}
+{% block title %}Update{% endblock title%}
 
 {% block content%}
 <h1>Create Post</h1>
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" class="btn btn-success" value="Upload Post">
+    <input type="submit" class="btn btn-success" value="Update Post">
     </form>
     
     
 {% endblock content%}
-
-
-
-
-

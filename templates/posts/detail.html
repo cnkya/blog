@@ -2,11 +2,19 @@
 
 
 
-{% block title %}Deets{% endblock title%}
-
+{% block title %}{{ post.title }}{% endblock title%}
 
 {% block content%}
+<h1>{{ post.title }}</h1>
+<h3>{{ post.subitle }}</h3>
+<small>Created on: {{ post.created_on }}</small>
+<p>{{ post.body }}</p>
+
+{% if user.is_authenticated %}
+{% if user == post.author %}
+<a class="btn btn-danger" href="{% url 'delete' post.id %}">Delete</a>
+{% endif %}
+{% endif %}
 
 
-
-{% endblock content%}
+{% endblock content %}

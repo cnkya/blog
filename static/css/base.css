@@ -1,0 +1,21 @@
+.nav-item{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;    
+    }
+
+h1,h2,h3{
+    padding-bottom:10px;
+    padding-top: 10px;
+    }
+
+p{
+    text-align: center;
+    }
+
+.container{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
