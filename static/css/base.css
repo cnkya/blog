@@ -1,21 +1,29 @@
-.nav-item{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 100px;    
-    }
-
-h1,h2,h3{
-    padding-bottom:10px;
-    padding-top: 10px;
-    }
-
-p{
-    text-align: center;
-    }
-
-.container{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+/* Base Colors */
+:root {
+    --primary-color: #ff6b6b; /* Warm red */
+    --secondary-color: #FFA500; /* Orange */
+    --tertiary-color: #FFD700; /* Yellow */
+    --text-color: #333333; /* Darker gray for text */
+    --bg-color: #f1d8d8; /* Lighter gray for background */
 }
+
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    text-align: center;
+}
+
+
+  /* Navigation Bar Styles */
+.navbar {
+    background-color: var(--primary-color) !important;
+}
+
+
+  /* Content Styles */
+.container {
+    margin-top: 2rem;
+}
+
