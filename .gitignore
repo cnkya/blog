@@ -1,2 +1,4 @@
-venu
+venu*
 *__pycache__*
+staticfiles
+.env
