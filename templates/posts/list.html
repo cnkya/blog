@@ -14,9 +14,19 @@
         <h6 class="card-subtitle mb-2 text-body-secondary">{{ post.subtitle }}</h6>
         <p class="card-text">{{ post.body|truncatechars:64 }}</p>
 
+        <a href="{% url 'detail' post.id %}" class="card-link">Detail</a>
         <a href="{% url 'update' post.id %}" class="card-link">Update</a>
         <a href="{% url 'delete' post.id %}" class="card-link">Delete</a>
         <a href="{% url 'detail' post.id %}" class="card-link">Continue reading.....</a>
+        {% if user.is_authenticated %}
+            {% if user == post.author %}
+                <form method="POST" action="{% url 'update_to_draft' post.id %}">
+                    {% csrf_token %}
+                    <input type="hidden" id="id_status" name="status" value="2"/>
+                    <input type="submit" class="card-link" value="Draft"/>
+                </form>
+            {% endif %}
+        {% endif %}
         
     </div>
 </div>

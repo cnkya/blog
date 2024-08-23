@@ -61,10 +61,13 @@ class ArchivedPostListView(LoginRequiredMixin, ListView):
 
 
 
-class PostDetailView(DetailView):  #read single
+class PostDetailView(LoginRequiredMixin, UserPassesTestMixin, DetailView):  #read single
     template_name = "posts/detail.html"
     model = Post
 
+    def test_func(self):
+        post = self.get_object()
+        return post.author == self.request.user
 
     
     
@@ -97,4 +100,7 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         post = self.get_object()
         return post.author == self.request.user
         
-
+class PostUpdateToDraftView(UpdateView):
+    template_name = "posts/update_status.html"
+    models = Post
+    fields = ["status"]
